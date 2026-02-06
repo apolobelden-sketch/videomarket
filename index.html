@@ -1,82 +1,220 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mini TikTok</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VideoMarket – Mini Amazon</title>
 
 <style>
-  body {
-    margin: 0;
-    background: #000;
-    font-family: Arial, sans-serif;
-  }
+body {
+  margin: 0;
+  background: #000;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
 
-  .video-card {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.feed {
+  max-width: 430px;
+  margin: auto;
+}
 
-  video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+.card {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-  .hint {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0,0,0,0.6);
-    color: #fff;
-    padding: 8px 14px;
-    border-radius: 20px;
-    font-size: 14px;
-    z-index: 10;
-  }
+.video-box {
+  flex: 1;
+  overflow: hidden;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info {
+  padding: 14px;
+  background: #000;
+}
+
+.title {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.price {
+  color: #00ff6a;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.buy-btn {
+  margin-top: 10px;
+  background: #ff9900;
+  color: #000;
+  text-align: center;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+}
+
+.hint {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.6);
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  z-index: 10;
+}
 </style>
 </head>
 
 <body>
 
-<div class="video-card">
-  <video src="video1.mp4" muted loop playsinline></video>
-</div>
-<div class="video-card">
-  <video src="video2.mp4" muted loop playsinline></video>
-</div>
-<div class="video-card">
-  <video src="video3.mp4" muted loop playsinline></video>
+<div class="feed">
+
+  <!-- VIDEO 1 -->
+  <div class="card">
+    <div class="video-box">
+      <video src="video1.mp4" muted loop playsinline></video>
+    </div>
+    <div class="info">
+      <div class="title">Producto 1</div>
+      <div class="price">$549 MXN</div>
+      <a class="buy-btn" href="https://amazon.com" target="_blank">
+        Ver en Mini Amazon
+      </a>
+    </div>
+  </div>
+
+  <!-- VIDEO 2 -->
+  <div class="card">
+    <div class="video-box">
+      <video src="video2.mp4" muted loop playsinline></video>
+    </div>
+    <div class="info">
+      <div class="title">Producto 2</div>
+      <div class="price">$699 MXN</div>
+      <a class="buy-btn" href="https://amazon.com" target="_blank">
+        Ver en Mini Amazon
+      </a>
+    </div>
+  </div>
+
+  <!-- VIDEO 3 -->
+  <div class="card">
+    <div class="video-box">
+      <video src="video3.mp4" muted loop playsinline></video>
+    </div>
+    <div class="info">
+      <div class="title">Producto 3</div>
+      <div class="price">$399 MXN</div>
+      <a class="buy-btn" href="https://amazon.com" target="_blank">
+        Ver en Mini Amazon
+      </a>
+    </div>
+  </div>
+
+  <!-- VIDEO 4 -->
+  <div class="card">
+    <div class="video-box">
+      <video src="video4.mp4" muted loop playsinline></video>
+    </div>
+    <div class="info">
+      <div class="title">Producto 4</div>
+      <div class="price">$899 MXN</div>
+      <a class="buy-btn" href="https://amazon.com" target="_blank">
+        Ver en Mini Amazon
+      </a>
+    </div>
+  </div>
+
+  <!-- VIDEO 5 -->
+  <div class="card">
+    <div class="video-box">
+      <video src="video5.mp4" muted loop playsinline></video>
+    </div>
+    <div class="info">
+      <div class="title">Producto 5</div>
+      <div class="price">$499 MXN</div>
+      <a class="buy-btn" href="https://amazon.com" target="_blank">
+        Ver en Mini Amazon
+      </a>
+    </div>
+  </div>
+
+  <!-- VIDEO 6 -->
+  <div class="card">
+    <div class="video-box">
+      <video src="video6.mp4" muted loop playsinline></video>
+    </div>
+    <div class="info">
+      <div class="title">Producto 6</div>
+      <div class="price">$799 MXN</div>
+      <a class="buy-btn" href="https://amazon.com" target="_blank">
+        Ver en Mini Amazon
+      </a>
+    </div>
+  </div>
+
+  <!-- VIDEO 7 -->
+  <div class="card">
+    <div class="video-box">
+      <video src="video7.mp4" muted loop playsinline></video>
+    </div>
+    <div class="info">
+      <div class="title">Producto 7</div>
+      <div class="price">$999 MXN</div>
+      <a class="buy-btn" href="https://amazon.com" target="_blank">
+        Ver en Mini Amazon
+      </a>
+    </div>
+  </div>
+
+  <!-- VIDEO 8 -->
+  <div class="card">
+    <div class="video-box">
+      <video src="video8.mp4" muted loop playsinline></video>
+    </div>
+    <div class="info">
+      <div class="title">Producto 8</div>
+      <div class="price">$299 MXN</div>
+      <a class="buy-btn" href="https://amazon.com" target="_blank">
+        Ver en Mini Amazon
+      </a>
+    </div>
+  </div>
+
 </div>
 
-<div class="hint" id="hint">Toca para activar sonido 🔊</div>
+<div class="hint" id="hint">Toca una vez para activar sonido 🔊</div>
 
 <script>
 const videos = document.querySelectorAll("video");
 let audioUnlocked = false;
 
-// Intersection Observer: solo 1 video activo
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     const video = entry.target;
-
     if (entry.isIntersecting) {
-      video.play();
+      video.play().catch(() => {});
     } else {
       video.pause();
-      video.currentTime = 0;
     }
   });
 }, { threshold: 0.6 });
 
 videos.forEach(video => observer.observe(video));
 
-// Un solo tap desbloquea audio
+// Un solo toque desbloquea audio (estilo TikTok)
 document.addEventListener("click", () => {
   if (!audioUnlocked) {
     videos.forEach(video => video.muted = false);
@@ -87,4 +225,4 @@ document.addEventListener("click", () => {
 </script>
 
 </body>
-</html>
+  </html>
