@@ -200,17 +200,42 @@ video {
 !-- aquí termina tu contenido -->
   
   <script>
-  document.querySelectorAll("video").forEach(video => {
-    video.addEventListener("click", (e) => {
-      e.stopPropagation();
-      if (video.paused) {
-        video.play();
-      } else {
-        video.pause();
-      }
-    });
-  });
-  </script>
+const videos = document.querySelectorAll("video");
+let audioUnlocked = false;
 
-</body>
-</html>
+// pausa todos menos el visible
+function pauseAll() {
+  videos.forEach(v => v.pause());
+}
+
+// observer tipo TikTok
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const video = entry.target;
+    if (entry.isIntersecting) {
+      pauseAll();
+      video.play();
+      video.muted = !audioUnlocked;
+    }
+  });
+}, { threshold: 0.75 });
+
+videos.forEach(video => observer.observe(video));
+
+// 🔊 desbloqueo GLOBAL de audio (primer toque)
+document.body.addEventListener("click", () => {
+  if (!audioUnlocked) {
+    audioUnlocked = true;
+    videos.forEach(v => v.muted = false);
+  }
+}, { once: true });
+
+// ▶️ play / pause con tap
+videos.forEach(video => {
+  video.addEventListener("click", e => {
+    e.stopPropagation();
+    if (video.paused) video.play();
+    else video.pause();
+  });
+});
+      </script>
