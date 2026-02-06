@@ -160,44 +160,39 @@
 
 
 
+Copiar código
+Html
 <script>
-  const videos = document.querySelectorAll("video");
-  let soundEnabled = false;
+const videos = document.querySelectorAll("video");
+let activeVideo = null;
 
-  function pauseAll() {
-    videos.forEach(v => {
-      v.pause();
-    });
-  }
-
-  const observer = new IntersectionObserver(entries => {
+const observer = new IntersectionObserver(
+  entries => {
     entries.forEach(entry => {
       const video = entry.target;
 
       if (entry.isIntersecting) {
-        pauseAll();
+        if (activeVideo && activeVideo !== video) {
+          activeVideo.pause();
+          activeVideo.muted = true;
+        }
 
-        video.muted = !soundEnabled;
-        video.play();
+        activeVideo = video;
+        video.play().catch(() => {});
       } else {
         video.pause();
       }
     });
-  }, {
-    threshold: 0.7
-  });
+  },
+  { threshold: 0.75 }
+);
 
-  videos.forEach(video => {
-    observer.observe(video);
+videos.forEach(video => {
+  observer.observe(video);
 
-    video.addEventListener("click", () => {
-      if (video.muted) {
-        soundEnabled = true;   // ✅ usuario autorizó sonido
-        video.muted = false;
-      } else {
-        soundEnabled = false;
-        video.muted = true;
-      }
-    });
+  video.addEventListener("click", () => {
+    // alterna mute
+    video.muted = !video.muted;
   });
+});
 </script>
