@@ -2,157 +2,145 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mini Amazon · Jairo Guizar</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VideoMarket</title>
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: #000;
-      font-family: Arial, sans-serif;
-      color: #fff;
-    }
-
-    h1 {
-      text-align: center;
-      padding: 20px 10px;
-      font-size: 22px;
-    }
-
-    .books {
-      max-width: 480px;
-      margin: auto;
-      padding: 10px;
-    }
-
-    .book {
-      background: #111;
-      border-radius: 14px;
-      margin-bottom: 20px;
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(0,0,0,.6);
-    }
-
-    .book img {
-      width: 100%;
-      display: block;
-    }
-
-    .book-info {
-      padding: 15px;
-    }
-
-    .book-title {
-      font-size: 16px;
-      margin-bottom: 6px;
-      font-weight: bold;
-    }
-
-    .book-price {
-      color: #00ff88;
-      margin-bottom: 12px;
-      font-size: 14px;
-    }
-
-    .amazon-btn {
-      display: block;
-      text-align: center;
-      background: #ff9900;
-      color: #000;
-      padding: 14px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 15px;
-    }
-
-    .amazon-btn:hover {
-      background: #ffb84d;
-    }
-  </style>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#000;scroll-snap-type:y mandatory;overflow-y:scroll}
+.section{height:100vh;scroll-snap-align:start;position:relative}
+video{width:100%;height:100%;object-fit:cover}
+.overlay{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  padding:20px;
+  background:linear-gradient(to top,rgba(0,0,0,.8),transparent);
+  color:#fff
+}
+.btn{
+  display:block;
+  margin-top:10px;
+  background:#ff9900;
+  color:#000;
+  text-align:center;
+  padding:14px;
+  border-radius:10px;
+  font-weight:bold;
+  text-decoration:none
+}
+.mute{
+  position:absolute;
+  top:20px;
+  right:20px;
+  background:rgba(0,0,0,.6);
+  color:#fff;
+  border:none;
+  border-radius:50%;
+  padding:10px;
+  font-size:18px
+}
+</style>
 </head>
 
 <body>
 
-<h1>📚 Libros de Jairo Guizar</h1>
-
-<div class="books">
-
-  <!-- LIBRO 1 -->
-  <div class="book">
-    <img src="https://m.media-amazon.com/images/I/71MentesBlindadas.jpg" alt="Mentes Blindadas">
-    <div class="book-info">
-      <div class="book-title">
-        MENTES BLINDADAS  
-      </div>
-      <div class="book-price">
-        $0.99 USD · Kindle
-      </div>
-      <a class="amazon-btn"
-         href="https://www.amazon.com/dp/B0GJFRMD1Z"
-         target="_blank">
-        Comprar en Amazon
-      </a>
-    </div>
+<!-- VIDEO 1 -->
+<div class="section">
+  <video src="video1.mp4" muted loop playsinline></video>
+  <button class="mute">🔇</button>
+  <div class="overlay">
+    <a class="btn" href="https://www.amazon.com/dp/B0GJFRMD1Z" target="_blank">
+      Ver mi Mini Amazon
+    </a>
   </div>
-
-  <!-- LIBRO 2 -->
-  <div class="book">
-    <img src="https://m.media-amazon.com/images/I/71DeepKnowledge.jpg" alt="Deep Knowledge">
-    <div class="book-info">
-      <div class="book-title">
-        DEEP KNOWLEDGE
-      </div>
-      <div class="book-price">
-        $0.99 USD · Kindle
-      </div>
-      <a class="amazon-btn"
-         href="https://www.amazon.com/dp/B0GJTVY4HJ"
-         target="_blank">
-        Comprar en Amazon
-      </a>
-    </div>
-  </div>
-
-  <!-- LIBRO 3 -->
-  <div class="book">
-    <img src="https://m.media-amazon.com/images/I/71ConocimientoProfundo.jpg" alt="Conocimiento Profundo">
-    <div class="book-info">
-      <div class="book-title">
-        CONOCIMIENTO PROFUNDO
-      </div>
-      <div class="book-price">
-        $0.99 USD · Kindle
-      </div>
-      <a class="amazon-btn"
-         href="https://www.amazon.com/dp/B0GJV219HT"
-         target="_blank">
-        Comprar en Amazon
-      </a>
-    </div>
-  </div>
-
-  <!-- LIBRO 4 -->
-  <div class="book">
-    <img src="https://m.media-amazon.com/images/I/71LastAuditor.jpg" alt="The Last Auditor">
-    <div class="book-info">
-      <div class="book-title">
-        THE LAST AUDITOR
-      </div>
-      <div class="book-price">
-        Kindle · Disponible
-      </div>
-      <a class="amazon-btn"
-         href="https://www.amazon.com/s?k=The+Last+Auditor+Jairo+Guizar"
-         target="_blank">
-        Comprar en Amazon
-      </a>
-    </div>
-  </div>
-
 </div>
+
+<!-- VIDEO 2 -->
+<div class="section">
+  <video src="video2.mp4" muted loop playsinline></video>
+  <button class="mute">🔇</button>
+  <div class="overlay">
+    <a class="btn" href="https://www.amazon.com/dp/B0GJTVY4HJ" target="_blank">
+      Ver mi Mini Amazon
+    </a>
+  </div>
+</div>
+
+<!-- VIDEO 3 -->
+<div class="section">
+  <video src="video3.mp4" muted loop playsinline></video>
+  <button class="mute">🔇</button>
+  <div class="overlay">
+    <a class="btn" href="https://www.amazon.com/dp/B0GJV219HT" target="_blank">
+      Ver mi Mini Amazon
+    </a>
+  </div>
+</div>
+
+<!-- VIDEO 4 -->
+<div class="section">
+  <video src="video4.mp4" muted loop playsinline></video>
+  <button class="mute">🔇</button>
+  <div class="overlay">
+    <a class="btn" href="https://www.amazon.com/s?k=Jairo+Guizar" target="_blank">
+      Ver mi Mini Amazon
+    </a>
+  </div>
+</div>
+
+<!-- VIDEO 5 -->
+<div class="section">
+  <video src="video5.mp4" muted loop playsinline></video>
+  <button class="mute">🔇</button>
+</div>
+
+<!-- VIDEO 6 -->
+<div class="section">
+  <video src="video6.mp4" muted loop playsinline></video>
+  <button class="mute">🔇</button>
+</div>
+
+<!-- VIDEO 7 -->
+<div class="section">
+  <video src="video7.mp4" muted loop playsinline></video>
+  <button class="mute">🔇</button>
+</div>
+
+<!-- VIDEO 8 -->
+<div class="section">
+  <video src="video8.mp4" muted loop playsinline></video>
+  <button class="mute">🔇</button>
+</div>
+
+<script>
+const videos=document.querySelectorAll("video");
+const mutes=document.querySelectorAll(".mute");
+
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{
+  if(e.isIntersecting){e.target.play()}
+  else{e.target.pause();e.target.currentTime=0}
+ })
+},{threshold:.7});
+
+videos.forEach(v=>observer.observe(v));
+
+mutes.forEach((b,i)=>{
+ b.onclick=()=>{
+  videos.forEach((v,x)=>{
+   if(x!==i){v.muted=true;mutes[x].textContent="🔇"}
+  });
+  videos[i].muted=!videos[i].muted;
+  b.textContent=videos[i].muted?"🔇":"🔊";
+ };
+});
+
+videos.forEach(v=>{
+ v.onclick=()=>v.paused?v.play():v.pause();
+});
+</script>
 
 </body>
 </html>
