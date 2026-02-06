@@ -1,126 +1,88 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mini Amazon</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mini TikTok</title>
 
 <style>
-body {
-  margin: 0;
-  background: #000;
-  font-family: Arial, sans-serif;
-}
+  body {
+    margin: 0;
+    background: #000;
+    font-family: Arial, sans-serif;
+  }
 
-.feed {
-  max-width: 420px;
-  margin: auto;
-}
+  .video-card {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-.card {
-  margin-bottom: 40px;
-}
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-/* CONTENEDOR TIPO TIKTOK */
-.video-box {
-  height: 90vh;
-  overflow: hidden;
-  border-radius: 18px;
-}
-
-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.info {
-  padding: 12px;
-}
-
-.price {
-  color: #00ff6a;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.btn {
-  margin-top: 10px;
-  background: #ff9900;
-  color: #000;
-  text-align: center;
-  padding: 14px;
-  border-radius: 10px;
-  font-weight: bold;
-}
+  .hint {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    z-index: 10;
+  }
 </style>
 </head>
 
 <body>
 
-<div class="feed">
-
-  <div class="card">
-    <div class="video-box">
-      <video src="video1.mp4" muted playsinline></video>
-    </div>
-    <div class="info">
-      <div>Producto 8</div>
-      <div class="price">$549 MXN</div>
-      <div class="btn">Ver en Mini Amazon</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="video-box">
-      <video src="video2.mp4" muted playsinline></video>
-    </div>
-    <div class="info">
-      <div>Producto 9</div>
-      <div class="price">$699 MXN</div>
-      <div class="btn">Ver en Mini Amazon</div>
-    </div>
-  </div>
-
+<div class="video-card">
+  <video src="video1.mp4" muted loop playsinline></video>
 </div>
+<div class="video-card">
+  <video src="video2.mp4" muted loop playsinline></video>
+</div>
+<div class="video-card">
+  <video src="video3.mp4" muted loop playsinline></video>
+</div>
+
+<div class="hint" id="hint">Toca para activar sonido 🔊</div>
 
 <script>
 const videos = document.querySelectorAll("video");
-let activeVideoWithSound = null;
+let audioUnlocked = false;
 
-// OBSERVER PARA SCROLL
-const observer = new IntersectionObserver((entries) => {
+// Intersection Observer: solo 1 video activo
+const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     const video = entry.target;
 
     if (entry.isIntersecting) {
-      video.play().catch(() => {});
+      video.play();
     } else {
       video.pause();
+      video.currentTime = 0;
     }
   });
 }, { threshold: 0.6 });
 
-videos.forEach(video => {
-  observer.observe(video);
+videos.forEach(video => observer.observe(video));
 
-  // TAP DEL USUARIO
-  video.addEventListener("click", () => {
-
-    // Apaga todos
-    videos.forEach(v => {
-      if (v !== video) {
-        v.muted = true;
-        v.pause();
-      }
-    });
-
-    // Activa solo este
-    video.muted = false;
-    video.play();
-
-    activeVideoWithSound = video;
-  });
+// Un solo tap desbloquea audio
+document.addEventListener("click", () => {
+  if (!audioUnlocked) {
+    videos.forEach(video => video.muted = false);
+    audioUnlocked = true;
+    document.getElementById("hint").style.display = "none";
+  }
 });
 </script>
 
