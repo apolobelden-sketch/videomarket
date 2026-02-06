@@ -158,31 +158,40 @@
 
 </div>
 
+
 <script>
   const videos = document.querySelectorAll("video");
+  let soundEnabled = false; // 👈 recuerda si el usuario activó sonido
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          videos.forEach(v => {
-            if (v !== entry.target) {
-              v.pause();
-            }
-          });
-          entry.target.play();
-        }
-      });
-    },
-    {
-      threshold: 0.6
-    }
-  );
+  function pauseAll() {
+    videos.forEach(v => {
+      v.pause();
+    });
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const video = entry.target;
+
+      if (entry.isIntersecting) {
+        pauseAll();
+
+        video.muted = !soundEnabled; // 🔊 aplica el estado del sonido
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+  }, {
+    threshold: 0.7
+  });
 
   videos.forEach(video => {
     observer.observe(video);
+
+    video.addEventListener("click", () => {
+      soundEnabled = video.muted; // si estaba muted, ahora se activa sonido
+      video.muted = !video.muted;
+    });
   });
 </script>
-
-</body>
-</html>
