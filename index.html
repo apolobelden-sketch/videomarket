@@ -159,9 +159,10 @@
 </div>
 
 
+
 <script>
   const videos = document.querySelectorAll("video");
-  let soundEnabled = false; // 👈 recuerda si el usuario activó sonido
+  let soundEnabled = false;
 
   function pauseAll() {
     videos.forEach(v => {
@@ -176,7 +177,7 @@
       if (entry.isIntersecting) {
         pauseAll();
 
-        video.muted = !soundEnabled; // 🔊 aplica el estado del sonido
+        video.muted = !soundEnabled;
         video.play();
       } else {
         video.pause();
@@ -190,8 +191,13 @@
     observer.observe(video);
 
     video.addEventListener("click", () => {
-      soundEnabled = video.muted; // si estaba muted, ahora se activa sonido
-      video.muted = !video.muted;
+      if (video.muted) {
+        soundEnabled = true;   // ✅ usuario autorizó sonido
+        video.muted = false;
+      } else {
+        soundEnabled = false;
+        video.muted = true;
+      }
     });
   });
 </script>
