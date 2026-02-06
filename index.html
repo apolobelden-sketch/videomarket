@@ -3,143 +3,167 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>VideoMarket</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VideoMarket</title>
 
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f2f2f2;
-    }
-
-    header {
       background: #000;
       color: #fff;
-      padding: 15px;
-      text-align: center;
-      font-size: 22px;
-      font-weight: bold;
+      font-family: Arial, sans-serif;
     }
 
-    .video-card {
-      background: #fff;
-      margin: 15px;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    .feed {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      padding: 12px;
+    }
+
+    .card {
+      background: #111;
+      border-radius: 14px;
+      padding: 10px;
     }
 
     video {
       width: 100%;
-      display: block;
+      max-height: 80vh;
+      object-fit: cover;
+      border-radius: 14px;
     }
 
     .info {
-      padding: 15px;
+      margin-top: 10px;
     }
 
-    .info h3 {
-      margin: 0 0 5px;
+    .info h2 {
+      margin: 6px 0 2px;
+      font-size: 17px;
     }
 
     .info p {
-      margin: 0 0 10px;
-      color: #555;
+      margin: 0;
+      color: #0f0;
+      font-size: 15px;
     }
 
-    .info button {
-      width: 100%;
+    .btn {
+      display: block;
+      margin-top: 10px;
       padding: 12px;
-      background: #ccc;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: not-allowed;
-    }
-
-    .carousel {
-      display: flex;
-      overflow-x: auto;
-      gap: 10px;
-      padding: 10px;
-      scroll-snap-type: x mandatory;
-    }
-
-    .carousel img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 10px;
-      scroll-snap-align: start;
-      flex-shrink: 0;
-    }
-
-    footer {
+      background: #ff9900;
+      color: #000;
       text-align: center;
-      padding: 20px;
-      color: #777;
-      font-size: 14px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
     }
   </style>
 </head>
 
 <body>
 
-  <header>🎥 VideoMarket</header>
+<div class="feed">
 
-  <!-- Producto 1 -->
-  <div class="video-card">
-    <video controls>
+  <!-- VIDEO 1 -->
+  <div class="card">
+    <video autoplay muted loop playsinline controls>
       <source src="video1.mp4" type="video/mp4">
     </video>
-    <div class="carousel">
-      <img src="img1.jpg">
-      <img src="img2.jpg">
-      <img src="img3.jpg">
-    </div>
     <div class="info">
-      <h3>Producto Demo 1</h3>
+      <h2>Producto 1</h2>
       <p>$199 MXN</p>
-      <button>Comprar (próximamente)</button>
+      <a href="#" class="btn">Ver en Mini Amazon</a>
     </div>
   </div>
 
-  <!-- Producto 2 -->
-  <div class="video-card">
-    <video controls>
+  <!-- VIDEO 2 -->
+  <div class="card">
+    <video autoplay muted loop playsinline controls>
       <source src="video2.mp4" type="video/mp4">
     </video>
-    <div class="carousel">
-      <img src="img1.jpg">
-      <img src="img2.jpg">
-      <img src="img3.jpg">
-    </div>
     <div class="info">
-      <h3>Producto Demo 2</h3>
-      <p>$299 MXN</p>
-      <button>Comprar (próximamente)</button>
+      <h2>Producto 2</h2>
+      <p>$249 MXN</p>
+      <a href="#" class="btn">Ver en Mini Amazon</a>
     </div>
   </div>
 
-  <!-- Producto 3 (sin video ni imágenes por ahora) -->
-  <!--
-  <div class="video-card">
-    <video controls>
+  <!-- VIDEO 3 -->
+  <div class="card">
+    <video autoplay muted loop playsinline controls>
       <source src="video3.mp4" type="video/mp4">
     </video>
-    <div class="carousel">
-      <img src="img4.jpg">
-    </div>
     <div class="info">
-      <h3>Producto Demo 3</h3>
-      <p>$399 MXN</p>
-      <button>Comprar (próximamente)</button>
+      <h2>Producto 3</h2>
+      <p>$299 MXN</p>
+      <a href="#" class="btn">Ver en Mini Amazon</a>
     </div>
   </div>
-  -->
 
-  <footer>© 2026 VideoMarket</footer>
+  <!-- VIDEO 4 -->
+  <div class="card">
+    <video autoplay muted loop playsinline controls>
+      <source src="video4.mp4" type="video/mp4">
+    </video>
+    <div class="info">
+      <h2>Producto 4</h2>
+      <p>$349 MXN</p>
+      <a href="#" class="btn">Ver en Mini Amazon</a>
+    </div>
+  </div>
+
+  <!-- VIDEO 5 -->
+  <div class="card">
+    <video autoplay muted loop playsinline controls>
+      <source src="video5.mp4" type="video/mp4">
+    </video>
+    <div class="info">
+      <h2>Producto 5</h2>
+      <p>$399 MXN</p>
+      <a href="#" class="btn">Ver en Mini Amazon</a>
+    </div>
+  </div>
+
+  <!-- VIDEO 6 -->
+  <div class="card">
+    <video autoplay muted loop playsinline controls>
+      <source src="video6.mp4" type="video/mp4">
+    </video>
+    <div class="info">
+      <h2>Producto 6</h2>
+      <p>$449 MXN</p>
+      <a href="#" class="btn">Ver en Mini Amazon</a>
+    </div>
+  </div>
+
+  <!-- VIDEO 7 -->
+  <div class="card">
+    <video autoplay muted loop playsinline controls>
+      <source src="video7.mp4" type="video/mp4">
+    </video>
+    <div class="info">
+      <h2>Producto 7</h2>
+      <p>$499 MXN</p>
+      <a href="#" class="btn">Ver en Mini Amazon</a>
+    </div>
+  </div>
+
+  <!-- VIDEO 8 -->
+  <div class="card">
+    <video autoplay muted loop playsinline controls>
+      <source src="video8.mp4" type="video/mp4">
+    </video>
+    <div class="info">
+      <h2>Producto 8</h2>
+      <p>$549 MXN</p>
+      <a href="#" class="btn">Ver en Mini Amazon</a>
+    </div>
+  </div>
+
+</div>
 
 </body>
 </html>
