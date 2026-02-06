@@ -1,241 +1,158 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VideoMarket – Mini Amazon</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Amazon · Jairo Guizar</title>
 
-<style>
-body {
-  margin: 0;
-  background: #000;
-  font-family: Arial, sans-serif;
-  color: #fff;
-}
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      font-family: Arial, sans-serif;
+      color: #fff;
+    }
 
-.feed {
-  max-width: 430px;
-  margin: auto;
-}
+    h1 {
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 22px;
+    }
 
-.card {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+    .books {
+      max-width: 480px;
+      margin: auto;
+      padding: 10px;
+    }
 
-.video-box {
-  flex: 1;
-  overflow: hidden;
-}
+    .book {
+      background: #111;
+      border-radius: 14px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,.6);
+    }
 
-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    .book img {
+      width: 100%;
+      display: block;
+    }
 
-.info {
-  padding: 14px;
-  background: #000;
-}
+    .book-info {
+      padding: 15px;
+    }
 
-.title {
-  font-size: 16px;
-  margin-bottom: 6px;
-}
+    .book-title {
+      font-size: 16px;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
 
-.price {
-  color: #00ff6a;
-  font-size: 18px;
-  font-weight: bold;
-}
+    .book-price {
+      color: #00ff88;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
 
-.buy-btn {
-  margin-top: 10px;
-  background: #ff9900;
-  color: #000;
-  text-align: center;
-  padding: 14px;
-  border-radius: 10px;
-  font-weight: bold;
-  text-decoration: none;
-  display: block;
-}
+    .amazon-btn {
+      display: block;
+      text-align: center;
+      background: #ff9900;
+      color: #000;
+      padding: 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+    }
 
-.hint {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0,0,0,0.6);
-  padding: 8px 14px;
-  border-radius: 20px;
-  font-size: 14px;
-  z-index: 10;
-}
-</style>
+    .amazon-btn:hover {
+      background: #ffb84d;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="feed">
+<h1>📚 Libros de Jairo Guizar</h1>
 
-  <!-- VIDEO 1 -->
-  <div class="card">
-    <div class="video-box">
-      <video src="video1.mp4" muted loop playsinline></video>
-    </div>
-    <div class="info">
-      <div class="title">Producto 1</div>
-      <div class="price">$549 MXN</div>
-      <a class="buy-btn" href="https://amazon.com" target="_blank">
-        Ver en Mini Amazon
+<div class="books">
+
+  <!-- LIBRO 1 -->
+  <div class="book">
+    <img src="https://m.media-amazon.com/images/I/71MentesBlindadas.jpg" alt="Mentes Blindadas">
+    <div class="book-info">
+      <div class="book-title">
+        MENTES BLINDADAS  
+      </div>
+      <div class="book-price">
+        $0.99 USD · Kindle
+      </div>
+      <a class="amazon-btn"
+         href="https://www.amazon.com/dp/B0GJFRMD1Z"
+         target="_blank">
+        Comprar en Amazon
       </a>
     </div>
   </div>
 
-  <!-- VIDEO 2 -->
-  <div class="card">
-    <div class="video-box">
-      <video src="video2.mp4" muted loop playsinline></video>
-    </div>
-    <div class="info">
-      <div class="title">Producto 2</div>
-      <div class="price">$699 MXN</div>
-      <a class="buy-btn" href="https://amazon.com" target="_blank">
-        Ver en Mini Amazon
+  <!-- LIBRO 2 -->
+  <div class="book">
+    <img src="https://m.media-amazon.com/images/I/71DeepKnowledge.jpg" alt="Deep Knowledge">
+    <div class="book-info">
+      <div class="book-title">
+        DEEP KNOWLEDGE
+      </div>
+      <div class="book-price">
+        $0.99 USD · Kindle
+      </div>
+      <a class="amazon-btn"
+         href="https://www.amazon.com/dp/B0GJTVY4HJ"
+         target="_blank">
+        Comprar en Amazon
       </a>
     </div>
   </div>
 
-  <!-- VIDEO 3 -->
-  <div class="card">
-    <div class="video-box">
-      <video src="video3.mp4" muted loop playsinline></video>
-    </div>
-    <div class="info">
-      <div class="title">Producto 3</div>
-      <div class="price">$399 MXN</div>
-      <a class="buy-btn" href="https://amazon.com" target="_blank">
-        Ver en Mini Amazon
+  <!-- LIBRO 3 -->
+  <div class="book">
+    <img src="https://m.media-amazon.com/images/I/71ConocimientoProfundo.jpg" alt="Conocimiento Profundo">
+    <div class="book-info">
+      <div class="book-title">
+        CONOCIMIENTO PROFUNDO
+      </div>
+      <div class="book-price">
+        $0.99 USD · Kindle
+      </div>
+      <a class="amazon-btn"
+         href="https://www.amazon.com/dp/B0GJV219HT"
+         target="_blank">
+        Comprar en Amazon
       </a>
     </div>
   </div>
 
-  <!-- VIDEO 4 -->
-  <div class="card">
-    <div class="video-box">
-      <video src="video4.mp4" muted loop playsinline></video>
-    </div>
-    <div class="info">
-      <div class="title">Producto 4</div>
-      <div class="price">$899 MXN</div>
-      <a class="buy-btn" href="https://amazon.com" target="_blank">
-        Ver en Mini Amazon
-      </a>
-    </div>
-  </div>
-
-  <!-- VIDEO 5 -->
-  <div class="card">
-    <div class="video-box">
-      <video src="video5.mp4" muted loop playsinline></video>
-    </div>
-    <div class="info">
-      <div class="title">Producto 5</div>
-      <div class="price">$499 MXN</div>
-      <a class="buy-btn" href="https://amazon.com" target="_blank">
-        Ver en Mini Amazon
-      </a>
-    </div>
-  </div>
-
-  <!-- VIDEO 6 -->
-  <div class="card">
-    <div class="video-box">
-      <video src="video6.mp4" muted loop playsinline></video>
-    </div>
-    <div class="info">
-      <div class="title">Producto 6</div>
-      <div class="price">$799 MXN</div>
-      <a class="buy-btn" href="https://amazon.com" target="_blank">
-        Ver en Mini Amazon
-      </a>
-    </div>
-  </div>
-
-  <!-- VIDEO 7 -->
-  <div class="card">
-    <div class="video-box">
-      <video src="video7.mp4" muted loop playsinline></video>
-    </div>
-    <div class="info">
-      <div class="title">Producto 7</div>
-      <div class="price">$999 MXN</div>
-      <a class="buy-btn" href="https://amazon.com" target="_blank">
-        Ver en Mini Amazon
-      </a>
-    </div>
-  </div>
-
-  <!-- VIDEO 8 -->
-  <div class="card">
-    <div class="video-box">
-      <video src="video8.mp4" muted loop playsinline></video>
-    </div>
-    <div class="info">
-      <div class="title">Producto 8</div>
-      <div class="price">$299 MXN</div>
-      <a class="buy-btn" href="https://amazon.com" target="_blank">
-        Ver en Mini Amazon
+  <!-- LIBRO 4 -->
+  <div class="book">
+    <img src="https://m.media-amazon.com/images/I/71LastAuditor.jpg" alt="The Last Auditor">
+    <div class="book-info">
+      <div class="book-title">
+        THE LAST AUDITOR
+      </div>
+      <div class="book-price">
+        Kindle · Disponible
+      </div>
+      <a class="amazon-btn"
+         href="https://www.amazon.com/s?k=The+Last+Auditor+Jairo+Guizar"
+         target="_blank">
+        Comprar en Amazon
       </a>
     </div>
   </div>
 
 </div>
 
-<div class="hint" id="hint">Toca una vez para activar sonido 🔊</div>
-
-!-- aquí termina tu contenido -->
-  
-  <script>
-const videos = document.querySelectorAll("video");
-let audioUnlocked = false;
-
-// pausa todos menos el visible
-function pauseAll() {
-  videos.forEach(v => v.pause());
-}
-
-// observer tipo TikTok
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    const video = entry.target;
-    if (entry.isIntersecting) {
-      pauseAll();
-      video.play();
-      video.muted = !audioUnlocked;
-    }
-  });
-}, { threshold: 0.75 });
-
-videos.forEach(video => observer.observe(video));
-
-// 🔊 desbloqueo GLOBAL de audio (primer toque)
-document.body.addEventListener("click", () => {
-  if (!audioUnlocked) {
-    audioUnlocked = true;
-    videos.forEach(v => v.muted = false);
-  }
-}, { once: true });
-
-// ▶️ play / pause con tap
-videos.forEach(video => {
-  video.addEventListener("click", e => {
-    e.stopPropagation();
-    if (video.paused) video.play();
-    else video.pause();
-  });
-});
-      </script>
+</body>
+</html>
